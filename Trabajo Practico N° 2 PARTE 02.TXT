@@ -1,0 +1,9 @@
+# Horas trabajadas y costo por hora
+[float]$horas = Read-Host "Introduce el número de horas trabajadas"
+[float]$coste = Read-Host "Introduce el coste por hora"
+
+# Calcular la paga correspondiente
+$paga = $horas * $coste
+
+# Mostrar el resultado por pantalla
+Write-Host "La paga que te corresponde es: $paga"

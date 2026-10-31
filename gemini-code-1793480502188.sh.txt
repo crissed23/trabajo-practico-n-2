@@ -1,0 +1,6 @@
+git init
+git add .
+git commit -m "Ejercicio 2"
+git branch -M main
+git remote add origin <https://github.com/crissed23/Trabajo-Practico-N-02.git>
+git push -u origin main

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP N.º 2: Script para PowerShell - Cristian Edgardo Paz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales limpios y académicos */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+
+        /* Contenedor principal tipo hoja académica */
+        .contenedor {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 36px 40px;
+            border-radius: 12px;
+            border-top: 6px solid #004b6b;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Apartado A: Encabezado */
+        header {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 20px;
+            margin-bottom: 28px;
+        }
+
+        .institucion {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #004b6b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            color: #0f172a;
+            margin-bottom: 16px;
+        }
+
+        .datos-academicos {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 14px 18px;
+        }
+
+        .datos-academicos p {
+            margin: 4px 0;
+            font-size: 0.95rem;
+        }
+
+        /* Títulos de secciones */
+        h2 {
+            font-size: 1.25rem;
+            color: #004b6b;
+            margin-top: 28px;
+            margin-bottom: 14px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            color: #334155;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            font-size: 0.96rem;
+        }
+
+        /* Bloques de código PowerShell */
+        pre {
+            background-color: #012456;
+            color: #f8fafc;
+            padding: 16px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+            font-family: Consolas, 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        code {
+            font-family: Consolas, 'Courier New', monospace;
+        }
+
+        /* Lista de comandos */
+        ul {
+            margin-left: 22px;
+            margin-bottom: 24px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .cmd {
+            background-color: #e2e8f0;
+            color: #0f172a;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.88rem;
+        }
+
+        /* Botones de GitHub */
+        .botones-github {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-repo {
+            background-color: #004b6b;
+            color: #ffffff;
+        }
+
+        .btn-commit {
+            background-color: #1e293b;
+            color: #ffffff;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Pie de página */
+        footer {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* Adaptación para pantallas móviles */
+        @media (max-width: 600px) {
+            .contenedor {
+                padding: 24px 20px;
+            }
+            h1 {
+                font-size: 1.35rem;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="contenedor">
+        
+        <!-- A. ENCABEZADO -->
+        <header>
+            <div class="institucion">UPATECO - Tecnicatura Universitaria en Ciberseguridad</div>
+            <h1>TRABAJO PRÁCTICO N.º 2: SCRIPT PARA POWERSHELL</h1>
+            <div class="datos-academicos">
+                <p><strong>Módulo:</strong> Programación para Seguridad Informática</p>
+                <p><strong>Docente:</strong> Lic. y Prof. Carlos Pacheco</p>
+                <p><strong>Alumno:</strong> Cristian Edgardo Paz</p>
+            </div>
+        </header>
+
+        <!-- B. DESCRIPCIÓN DE LA ACTIVIDAD -->
+        <section>
+            <h2>Descripción de la Actividad</h2>
+
+            <h3>Ejercicio 1</h3>
+            <p>
+                1) Escribir un programa en Power Shell que pregunte el nombre del usuario en la consola y después que el usuario lo introduzca, muestre por pantalla la cadena <strong>¡Hola &lt;nombre&gt;!</strong>, donde &lt;nombre&gt; es el nombre que el usuario haya introducido.
+            </p>
+<pre><code># Solicitar el nombre al usuario
+$nombre = Read-Host "Introduce tu nombre"
+
+# Mostrar el saludo por pantalla
+Write-Host "¡Hola $nombre!"</code></pre>
+
+            <h3>Ejercicio 2</h3>
+            <p>
+                2) Escribir un programa que pregunte al usuario por el número de horas trabajadas y el coste por hora. Después debe mostrar por pantalla la paga que le corresponde.
+            </p>
+<pre><code># Horas trabajadas y costo por hora
+[float]$horas = Read-Host "Introduce el número de horas trabajadas"
+[float]$coste = Read-Host "Introduce el coste por hora"
+
+# Calcular la paga correspondiente
+$paga = $horas * $coste
+
+# Mostrar el resultado por pantalla
+Write-Host "La paga que te corresponde es: $paga"</code></pre>
+        </section>
+
+        <!-- COMANDOS PRINCIPALES UTILIZADOS -->
+        <section>
+            <h2>Comandos Principales Utilizados</h2>
+            <ul>
+                <li><code class="cmd">Read-Host</code>: Solicita datos al usuario por consola en tiempo de ejecución.</li>
+                <li><code class="cmd">Write-Host</code>: Muestra texto estático o el valor de variables por pantalla.</li>
+                <li><code class="cmd">Variables ($nombre, $horas, $coste, $paga)</code>: Almacenan los valores ingresados y calculados utilizando el símbolo <code>$</code>.</li>
+                <li><code class="cmd">[float]</code>: Convierte el valor ingresado a número decimal para poder multiplicar horas por coste.</li>
+            </ul>
+        </section>
+
+        <!-- BOTONES PARA REPOSITORIO Y COMMIT EN GITHUB -->
+        <section class="botones-github">
+            <!-- Reemplazar las URLs en href con el enlace real de tu repositorio de GitHub -->
+            <a href="https://github.com/crissed23" target="_blank" rel="noopener noreferrer" class="btn btn-repo">
+                Mi Repositorio en GitHub
+            </a>
+            <a href="https://github.com/crissed23/Trabajo-Practico-N-02" target="_blank" rel="noopener noreferrer" class="btn btn-commit">
+                Ver Commit en GitHub
+            </a>
+        </section>
+
+        <!-- PIE DE PÁGINA -->
+        <footer>
+            <p>2026 - UPATECO | Programación para Seguridad Informática</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
